@@ -117,6 +117,11 @@ const getCustomInitialOptions = (
   return customParams;
 };
 
+globalThis.assignWindowLocationUrl = (url: string) => {
+  console.log('🔥');
+  window.location.assign(url);
+};
+
 /**
  * Auth0 SDK for Single Page Applications using [Authorization Code Grant Flow with PKCE](https://auth0.com/docs/api-auth/tutorials/authorization-code-grant-pkce).
  */
@@ -437,7 +442,7 @@ export default class Auth0Client {
    */
   public async loginWithRedirect(options: RedirectLoginOptions = {}) {
     const url = await this.buildAuthorizeUrl(options);
-    window.location.assign(url);
+    globalThis.assignWindowLocationUrl(url);
   }
 
   /**
