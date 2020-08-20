@@ -25,6 +25,7 @@
     "test:integration": "concurrently --raw --kill-others --success first npm:test:integration:server npm:test:integration:tests",
     "print-bundle-size": "node ./scripts/print-bundle-size",
     "prepack": "npm run build && npm run test && node ./scripts/prepack",
+    "prepare": "npm run build",
     "release": "node ./scripts/release",
     "release:clean": "node ./scripts/cleanup",
     "publish:cdn": "ccu --trace"
